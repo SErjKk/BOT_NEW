@@ -42,12 +42,12 @@ bot = telebot.TeleBot(TOKEN)
 
 # установка напоминаний
 def set_schedule():
-    schedule.every().day.at(TIMES[0]).do(remind).tag('task')
-    schedule.every().day.at(TIMES[1]).do(remind).tag('task')
-    schedule.every().day.at(TIMES[2]).do(remind).tag('task')
-    schedule.every().day.at(TIMES[3]).do(remind).tag('task')
-    schedule.every().day.at(TIMES[4]).do(remind).tag('task')
-    schedule.every().day.at(TIMES[5]).do(remind).tag('task')
+    # schedule.every().day.at(TIMES[0]).do(remind).tag('task')
+    # schedule.every().day.at(TIMES[1]).do(remind).tag('task')
+    # schedule.every().day.at(TIMES[2]).do(remind).tag('task')
+    # schedule.every().day.at(TIMES[3]).do(remind).tag('task')
+    # schedule.every().day.at(TIMES[4]).do(remind).tag('task')
+    # schedule.every().day.at(TIMES[5]).do(remind).tag('task')
     schedule.every(10).seconds.do(remind_1).tag('task')
 def send_remind():
     while True:
