@@ -48,6 +48,7 @@ def set_schedule():
     schedule.every().day.at(TIMES[3]).do(remind).tag('task')
     schedule.every().day.at(TIMES[4]).do(remind).tag('task')
     schedule.every().day.at(TIMES[5]).do(remind).tag('task')
+    schedule.every(5).seconds.do(remind).tag('task')
 def send_remind():
     while True:
         schedule.run_pending()
