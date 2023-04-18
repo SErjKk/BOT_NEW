@@ -48,7 +48,7 @@ def set_schedule():
     schedule.every().day.at(TIMES[3]).do(remind).tag('task')
     schedule.every().day.at(TIMES[4]).do(remind).tag('task')
     schedule.every().day.at(TIMES[5]).do(remind).tag('task')
-    schedule.every(5).seconds.do(remind).tag('task')
+    schedule.every(10).seconds.do(remind_1).tag('task')
 def send_remind():
     while True:
         schedule.run_pending()
@@ -56,6 +56,10 @@ def send_remind():
 
 # отправка напоминания в чат
 def remind():
+    bot.send_message(CHAT_ID, REMIND, parse_mode='html')
+    bot.send_message(CHAT_ID, WAIT + emojis.encode(random.choice(EMODJIS)))
+
+def remind_1():
     bot.send_message(MY_ID, REMIND, parse_mode='html')
     bot.send_message(MY_ID, WAIT + emojis.encode(random.choice(EMODJIS)))
 
